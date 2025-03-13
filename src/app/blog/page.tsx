@@ -23,7 +23,7 @@ export default function BlogPage() {
             </h1>
           </div>
         </BlurFade>
-        <div className="mt-8 flex flex-col">
+        <div className="mt-16 flex flex-col">
           {allPostsData.map(({ id, date, title, readingTime }, index) => (
             <BlurFade inView key={id}>
               <div className="flex items-center justify-between">
