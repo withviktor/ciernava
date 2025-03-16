@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const allPostsData = getSortedPostsData();
+
   return (
     <main>
       <div className="container mx-auto flex flex-col">
@@ -24,22 +25,22 @@ export default function BlogPage() {
           </div>
         </BlurFade>
         <div className="mt-16 flex flex-col">
-          {allPostsData.map(({ id, date, title, readingTime }, index) => (
-            <BlurFade inView key={id}>
+          {allPostsData.map((post, index) => (
+            <BlurFade inView key={post.id}>
               <div className="flex items-center justify-between">
                 <Link
-                  href={`/blog/${id}`}
+                  href={`/blog/${post.id}`}
                   className="text-lg text-blue-500 underline underline-offset-2"
                 >
-                  {title}
+                  {post.title}
                 </Link>
                 <div className="flex flex-row items-center justify-end gap-4 text-gray-500">
                   <span>
-                    {formatDistance(new Date(date), new Date(), {
+                    {formatDistance(new Date(post.date), new Date(), {
                       addSuffix: true,
                     })}
                   </span>
-                  <span>{readingTime} min read</span>
+                  <span>{post.readingTime} min read</span>
                 </div>
               </div>
               {index !== allPostsData.length - 1 && (

@@ -3,7 +3,10 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
-  content: ["./src/**/*.tsx"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}", // Adjust the path according to your project structure
+    "./posts/**/*.{md,mdx}", // Include markdown files if necessary
+  ],
   theme: {
     container: {
       // you can configure the container to be centered

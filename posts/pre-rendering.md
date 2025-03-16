@@ -1,11 +1,50 @@
 ---
-title: "Two Forms of Pre-rendering"
-date: "2025-03-12"
+title: "Exploring Tailwind CSS with Markdown"
+date: "2025-03-16, 14:00"
 ---
 
-Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+# Welcome to Tailwind CSS with Markdown
 
-- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
-- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
+This is a sample post to demonstrate how Tailwind CSS classes are applied to various HTML elements generated from markdown content.
 
-Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+## Headings
+
+### Subheading Level 3
+
+#### Subheading Level 4
+
+## Paragraphs
+
+This is a paragraph with some **bold text** and _italic text_. Here is a [link](https://example.com) with custom styles.
+
+## Lists
+
+### Unordered List
+
+- Item 1
+- Item 2
+  - Subitem 1
+  - Subitem 2
+
+### Ordered List
+
+1. First item
+2. Second item
+   1. Subitem 1
+   2. Subitem 2
+
+## Blockquote
+
+> This is a blockquote with custom styles applied.
+
+## Code Block
+
+```javascript
+let a1;
+let a2;
+let a3;
+```
+
+## Image
+
+![Sample Image](https://placehold.co/600x400)

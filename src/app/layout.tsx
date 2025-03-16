@@ -1,9 +1,10 @@
+import "highlight.js/styles/tokyo-night-dark.css";
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
+import Footer from "~/components/ui/footer";
 import Navbar from "~/components/ui/navbar";
 import Providers from "~/components/ui/providers";
-import Footer from "~/components/ui/footer";
 
 export const metadata: Metadata = {
   title: "Viktor",
