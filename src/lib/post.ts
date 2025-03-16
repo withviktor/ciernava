@@ -73,15 +73,17 @@ export async function getPostBySlug(slug: string) {
   const processedHtml = await rehype()
     .use(rehypeParse, { fragment: true })
     .use(rehypeAddClasses, {
-      h1: "text-4xl font-bold",
-      h2: "text-3xl font-semibold",
-      p: "text-lg",
-      a: "text-blue-500 underline",
+      h1: "text-4xl font-bold mb-2",
+      h2: "text-3xl font-semibold mb-2",
+      h3: "text-2xl font-semibold mb-2",
+      h4: "text-xl font-semibold mb-2",
+      p: "text-lg leading-normal",
+      a: "text-blue-500 underline underline-offset-2",
       ul: "list-disc list-inside",
       ol: "list-decimal list-inside",
-      li: "mb-2",
+      "li li": "ml-4",
       blockquote: "border-l-4 border-gray-300 pl-4 italic",
-      img: "max-w-full h-auto",
+      img: "max-w-full h-auto rounded-md",
     })
     .use(rehypeHighlight)
     .use(rehypeHighlightCodeLines, {

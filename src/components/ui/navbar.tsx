@@ -21,12 +21,12 @@ export default function Navbar() {
             ))}
             <div className="flex flex-row items-center gap-4">
               <BlurFade inView>
-                <Link href="">
+                <Link href="https://www.youtube.com/@withviktor">
                   <FaYoutube />
                 </Link>
               </BlurFade>
               <BlurFade inView>
-                <Link href="">
+                <Link href="https://www.instagram.com/v.ciernava/">
                   <FaInstagram />
                 </Link>
               </BlurFade>
