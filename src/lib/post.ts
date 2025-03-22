@@ -1,14 +1,10 @@
 import fs from "fs";
 import matter from "gray-matter";
+import { type MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
-import { rehype } from "rehype";
 import rehypeAddClasses from "rehype-add-classes";
 import rehypeHighlight from "rehype-highlight";
-import rehypeHighlightCodeLines from "rehype-highlight-code-lines";
-import rehypeParse from "rehype-parse";
-import rehypeStringify from "rehype-stringify";
-import { remark } from "remark";
-import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -17,19 +13,28 @@ interface PostMetadata {
   date: string;
 }
 
-interface PostData extends PostMetadata {
+interface ListPostData extends PostMetadata {
   id: string;
   readingTime: number;
+}
+
+interface SinglePostData extends PostMetadata {
+  id: string;
+  readingTime: number;
+  content: MDXRemoteSerializeResult<
+    Record<string, unknown>,
+    Record<string, unknown>
+  >;
 }
 
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData: PostData[] = fileNames
-    .filter((fileName) => fileName.endsWith(".md"))
+  const allPostsData: ListPostData[] = fileNames
+    .filter((fileName) => fileName.endsWith(".mdx"))
     .map((fileName) => {
       // Remove ".md" from file name to get id
-      const id = fileName.replace(/\.md$/, "");
+      const id = fileName.replace(/\.mdx$/, "");
 
       // Read markdown file as string
       const fullPath = path.join(postsDirectory, fileName);
@@ -59,47 +64,46 @@ export function getSortedPostsData() {
   });
 }
 
-export async function getPostBySlug(slug: string) {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+export async function getPostBySlug(slug: string): Promise<SinglePostData> {
+  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
+  // Parse the frontmatter using gray-matter
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  const processedHtml = await rehype()
-    .use(rehypeParse, { fragment: true })
-    .use(rehypeAddClasses, {
-      h1: "text-4xl font-bold mb-2",
-      h2: "text-3xl font-semibold mb-2",
-      h3: "text-2xl font-semibold mb-2",
-      h4: "text-xl font-semibold mb-2",
-      p: "text-lg leading-normal",
-      a: "text-blue-500 underline underline-offset-2",
-      ul: "list-disc list-inside",
-      ol: "list-decimal list-inside",
-      "li li": "ml-4",
-      blockquote: "border-l-4 border-gray-300 pl-4 italic",
-      img: "max-w-full h-auto rounded-md",
-    })
-    .use(rehypeHighlight)
-    .use(rehypeHighlightCodeLines, {
-      showLineNumbers: true,
-    })
-    .use(rehypeStringify)
-    .process(contentHtml);
-
-  // Calculate reading time in minutes
+  // Calculate reading time
   const words = matterResult.content.split(/\s+/).length;
   const readingTime = Math.ceil(words / 200);
 
+  // Serialize the MDX content for rendering
+  const mdxSource = await serialize(matterResult.content, {
+    mdxOptions: {
+      rehypePlugins: [
+        rehypeHighlight,
+        [
+          rehypeAddClasses,
+          {
+            h1: "text-4xl font-bold mb-2",
+            h2: "text-3xl font-semibold mb-2",
+            h3: "text-2xl font-semibold mb-2",
+            h4: "text-xl font-semibold mb-2",
+            p: "text-lg leading-normal",
+            a: "text-blue-500 underline underline-offset-2",
+            ul: "list-disc list-inside",
+            ol: "list-decimal list-inside",
+            "li li": "ml-4",
+            blockquote: "border-l-4 border-gray-300 pl-4 italic",
+            img: "max-w-full h-auto rounded-md",
+          },
+        ],
+      ],
+    },
+  });
+
   return {
-    slug,
+    id: slug,
     readingTime,
-    content: processedHtml.toString(),
+    content: mdxSource,
     ...(matterResult.data as PostMetadata),
   };
 }
