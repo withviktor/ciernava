@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Hi, I’m a software engineer and a solo-preneur based in Czech Republic.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
+  openGraph: {
+    title: "Viktor",
+    description:
+      "Hi, I’m a software engineer and a solo-preneur based in Czech Republic.",
+    url: "https://withviktor.com",
+  },
 };
 
 export default function RootLayout({

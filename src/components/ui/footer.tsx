@@ -35,7 +35,7 @@ export default function Footer() {
               Business mail{" "}
               <Link
                 href="mailto:business@withviktor.com"
-                aria-label="Business Email"
+                aria-label="business@withvikor.com"
                 className="underline underline-offset-2"
               >
                 business@withviktor.com

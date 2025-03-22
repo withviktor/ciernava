@@ -30,7 +30,7 @@ export default function BlogPage() {
               <div className="flex items-center justify-between">
                 <Link
                   href={`/blog/${post.id}`}
-                  className="text-lg text-blue-500 underline underline-offset-2"
+                  className="text-lg text-blue-600 underline underline-offset-2"
                 >
                   {post.title}
                 </Link>
