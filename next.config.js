@@ -8,7 +8,7 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
-  transpilePackages: ['next-mdx-remote'],
+  transpilePackages: ["next-mdx-remote"],
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 

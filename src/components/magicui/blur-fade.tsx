@@ -4,9 +4,9 @@ import {
   AnimatePresence,
   motion,
   useInView,
-  UseInViewOptions,
-  Variants,
-  MotionProps,
+  type UseInViewOptions,
+  type Variants,
+  type MotionProps,
 } from "motion/react";
 import { useRef } from "react";
 
@@ -57,7 +57,7 @@ export function BlurFade({
       filter: `blur(0px)`,
     },
   };
-  const combinedVariants = variant || defaultVariants;
+  const combinedVariants = variant ?? defaultVariants;
   return (
     <AnimatePresence>
       <motion.div

@@ -10,5 +10,10 @@ export default function MdxContentRenderer({
 }: {
   content: MDXRemoteSerializeResult;
 }) {
-  return <MDXRemote {...content} components={{ Button, HeroVideoDialog, BlurFade }} />;
+  return (
+    <MDXRemote
+      {...content}
+      components={{ Button, HeroVideoDialog, BlurFade }}
+    />
+  );
 }

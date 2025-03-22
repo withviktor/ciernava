@@ -14,7 +14,7 @@ export default function BlogPage() {
 
   return (
     <main>
-      <div className="relative container mx-auto flex flex-col">
+      <div className="container relative mx-auto flex flex-col">
         <BlurFade inView>
           <div>
             <h1 className="max-w-lg text-[2.5rem] leading-snug">
