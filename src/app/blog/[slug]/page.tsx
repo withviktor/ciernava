@@ -26,7 +26,7 @@ export default async function SingePostPage({
 
   return (
     <main>
-      <article className="container mx-auto flex flex-col">
+      <article className="container relative mx-auto flex flex-col">
         <BlurFade inView>
           <h1 className="max-w-lg text-[2.5rem] leading-snug">{post.title}</h1>
         </BlurFade>

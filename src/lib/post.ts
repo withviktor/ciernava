@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import { type MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
-import rehypeAddClasses from "rehype-add-classes";
+import rehypeAddClasses from "rehype-class-names";
 import rehypeHighlight from "rehype-highlight";
 
 const postsDirectory = path.join(process.cwd(), "posts");
