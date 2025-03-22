@@ -88,7 +88,7 @@ export async function getPostBySlug(slug: string): Promise<SinglePostData> {
             h3: "text-2xl font-semibold mb-2",
             h4: "text-xl font-semibold mb-2",
             p: "text-lg leading-normal",
-            a: "text-blue-500 underline underline-offset-2",
+            a: "text-blue-600 underline underline-offset-2",
             ul: "list-disc list-inside",
             ol: "list-decimal list-inside",
             "li li": "ml-4",
