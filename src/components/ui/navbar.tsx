@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaInstagram, FaYoutube } from "react-icons/fa6";
 import routes from "~/lib/routes";
+import { cn } from "~/lib/utils";
 import { BlurFade } from "../magicui/blur-fade";
 
 export default function Navbar() {
@@ -16,17 +17,32 @@ export default function Navbar() {
           <div className="flex flex-row items-center justify-end gap-8 text-lg">
             {Object.values(routes).map((route) => (
               <BlurFade inView key={route.path}>
-                <Link href={route.path}>{route.displayName}</Link>
+                <Link
+                  href={route.path}
+                  className={cn(
+                    route.disabled ? "pointer-events-none text-gray-500" : "",
+                  )}
+                >
+                  {route.displayName}
+                </Link>
               </BlurFade>
             ))}
             <div className="flex flex-row items-center gap-4">
               <BlurFade inView>
-                <Link href="https://www.youtube.com/@withviktor" aria-label="Youtube Channel" target="_blank">
+                <Link
+                  href="https://www.youtube.com/@withviktor"
+                  aria-label="Youtube Channel"
+                  target="_blank"
+                >
                   <FaYoutube />
                 </Link>
               </BlurFade>
               <BlurFade inView>
-                <Link href="https://www.instagram.com/withviktor_" aria-label="Instagram" target="_blank">
+                <Link
+                  href="https://www.instagram.com/withviktor_"
+                  aria-label="Instagram"
+                  target="_blank"
+                >
                   <FaInstagram />
                 </Link>
               </BlurFade>
