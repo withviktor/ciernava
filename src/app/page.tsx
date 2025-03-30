@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { BlurFade } from "~/components/magicui/blur-fade";
+import refactorImage from "../../public/assets/refactor.jpg";
 
 export default function HomePage() {
   return (
