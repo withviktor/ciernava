@@ -69,3 +69,19 @@
     @apply font-normal antialiased;
   }
 }
+
+.numbered-code-line::before {
+  content: attr(data-line-number);
+
+  margin-left: -8px;
+  margin-right: 16px;
+  width: 1rem;
+  color: var(--color-text-weak);
+  text-align: right;
+
+  display: inline-block;
+}
+
+.hljs {
+  @apply rounded-md;
+}

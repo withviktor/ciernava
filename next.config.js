@@ -2,9 +2,20 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
+import createMDX from "@next/mdx";
+import rehypeHighlight from "rehype-highlight";
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  transpilePackages: ["next-mdx-remote"],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+};
 
-export default config;
+const withMDX = createMDX({
+  options: {
+    rehypePlugins: [rehypeHighlight],
+  },
+});
+
+export default withMDX(config);

@@ -21,7 +21,9 @@ export default function Footer() {
             <p>
               Watch me on{" "}
               <Link
-                href="https://www.instagram.com/v.ciernava/"
+                href="https://www.instagram.com/withviktor_"
+                aria-label="Instagram"
+                target="_blank"
                 className="underline underline-offset-2"
               >
                 Instagram
@@ -33,6 +35,7 @@ export default function Footer() {
               Business mail{" "}
               <Link
                 href="mailto:business@withviktor.com"
+                aria-label="business@withvikor.com"
                 className="underline underline-offset-2"
               >
                 business@withviktor.com
