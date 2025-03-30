@@ -4,7 +4,6 @@ export type Route = {
   disabled?: boolean;
 };
 
-const routes: Record<string, Route> = {
-};
+const routes: Record<string, Route> = {};
 
 export default routes;
