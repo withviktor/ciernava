@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import myPhoto from "@/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c.jpeg";
+import myPhoto from "@/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c-removebg-preview.png";
 import Link from "next/link";
 
 export default function HomePage() {
