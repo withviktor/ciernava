@@ -2,7 +2,7 @@ import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}", // Adjust the path according to your project structure
   ],
@@ -20,7 +20,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Helvetica Neue", ...fontFamily.sans],
+        sans: [...fontFamily.sans],
       },
       borderRadius: {
         lg: "var(--radius)",
