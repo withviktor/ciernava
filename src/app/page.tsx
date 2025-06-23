@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 
-import myPhoto from "@/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c-removebg-preview.png";
+import myPhoto from "~/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c-removebg-preview.png";
 import Link from "next/link";
+import SocialIcons from "~/components/social-icons";
 
 export default function HomePage() {
   return (
@@ -24,7 +25,9 @@ export default function HomePage() {
               </span>
             </p>
             <p>I build productivity apps</p>
-            <p>and share videos about how I build them</p>
+            <p className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
+              and share videos about how I build them <SocialIcons />
+            </p>
             <p className="mt-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
               Lastly I run a small company{" "}
               <Link
