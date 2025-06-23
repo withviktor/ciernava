@@ -18,7 +18,7 @@ export default function SocialIcons() {
             className="relative z-10 transition-all duration-200 sm:translate-x-2 sm:-rotate-6 sm:transform sm:group-hover:translate-x-0 sm:group-hover:rotate-0"
           >
             <Image
-              src={LinkedInIcon}
+              src={LinkedInIcon as string}
               alt="@withvikktor"
               width={42}
               height={42}
@@ -37,7 +37,7 @@ export default function SocialIcons() {
             
           >
             <Image
-              src={GithubIcon}
+              src={GithubIcon as string}
               alt="@withvitor"
               width={42}
               height={42}
@@ -55,7 +55,7 @@ export default function SocialIcons() {
             className="relative z-10 transition-all duration-200 sm:-translate-x-4 sm:-rotate-6 sm:transform sm:group-hover:translate-x-4 sm:group-hover:rotate-0"
           >
             <Image
-              src={InstagramIcon}
+              src={InstagramIcon as string}
               alt="@withviktor_"
               width={42}
               height={42}
@@ -73,7 +73,7 @@ export default function SocialIcons() {
             className="relative z-10 transition-all duration-200 sm:-translate-x-6 sm:rotate-3 sm:transform sm:group-hover:translate-x-6 sm:group-hover:rotate-0"
           >
             <Image
-              src={TwitterIcon}
+              src={TwitterIcon as string}
               alt="@vciernava"
               width={42}
               height={42}
