@@ -19,7 +19,7 @@ export default function SocialIcons() {
           >
             <Image
               src={LinkedInIcon as string}
-              alt="@withvikktor"
+              alt="@withviktor"
               width={42}
               height={42}
               className="block"
@@ -38,7 +38,7 @@ export default function SocialIcons() {
           >
             <Image
               src={GithubIcon as string}
-              alt="@withvitor"
+              alt="@withviktor"
               width={42}
               height={42}
               className="block"
