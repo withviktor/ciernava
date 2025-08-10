@@ -26,21 +26,24 @@ export default function HomePage() {
               </span>
             </p>
             <p className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
-              I build productivity apps <AppIcons />
+              I am a Java developer creating Minecraft plugins as a hobby
             </p>
             <p className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
               and share videos about how I build them <SocialIcons />
             </p>
             <p className="mt-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
+              This is what I am working on currently <AppIcons />
+            </p>
+            <p className="mt-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
               Lastly I run a small company{" "}
               <Link
-                href="https://gdg-solutions.com"
+                href="https://pixelhive.dev"
                 className="text-blue-500 hover:underline"
               >
-                GDG Solutions
+                PixelHive
               </Link>
             </p>
-            <p>where we create innovative solutions for our clients.</p>
+            <p>where we create new experiences in the Minecraft universe.</p>
           </div>
         </div>
       </div>
