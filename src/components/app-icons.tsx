@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import JellyKitIcon from "~/../public/assets/JellyKit.svg";
+import DarkanianMoon from "~/../public/assets/moon-bg-42-x1600.svg";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 export default function AppIcons() {
@@ -10,20 +10,20 @@ export default function AppIcons() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
-            href="https://jellykit.dev"
+            href="https://darkanian.com"
             target="_blank"
             className="relative z-10 transition-all duration-200 sm:translate-x-2 sm:-rotate-6 sm:transform sm:group-hover:translate-x-0 sm:group-hover:rotate-0"
           >
             <Image
-              src={JellyKitIcon as string}
-              alt="JellyKit"
+              src={DarkanianMoon as string}
+              alt="Darkanian MC"
               width={42}
               height={42}
               className="block rounded-md"
             />
           </Link>
         </TooltipTrigger>
-        <TooltipContent>JellyKit</TooltipContent>
+        <TooltipContent>play.darkanian.com</TooltipContent>
       </Tooltip>
     </span>
   );
