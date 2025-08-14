@@ -1,10 +1,8 @@
-"use client";
-
 import Image from "next/image";
 
-import Link from "next/link";
 import myPhoto from "~/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c-removebg-preview.png";
-import AppIcons from "~/components/app-icons";
+import JellyKitIcon from "~/components/jellykit-icon";
+import { Highlighter } from "~/components/magicui/highlighter";
 import SocialIcons from "~/components/social-icons";
 
 export default function HomePage() {
@@ -13,37 +11,33 @@ export default function HomePage() {
       <div className="flex w-full max-w-[1300px] flex-row items-center justify-center gap-20">
         <div className="flex flex-col items-start gap-6">
           <div className="flex flex-col items-start gap-4 text-2xl font-light text-gray-800">
-            <p className="mb-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
-              Hi, my name is Viktor Čierňava{" "}
+            <p className="mb-10 flex flex-wrap items-center gap-2">
+              Hey, my name is Viktor Čierňava{" "}
               <span>
                 <Image
                   src={myPhoto}
                   height={42}
                   width={42}
                   alt="This is Viktor"
-                  className="inline-block rounded-full"
+                  className="inline-flex rounded-full"
                 />
               </span>
             </p>
-            <p className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
-              I am a Java developer creating Minecraft plugins as a hobby
+            <p className="flex flex-wrap items-center gap-2">
+              Software Engineer turned Entrepreneur.
             </p>
-            <p className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
-              and share videos about how I build them <SocialIcons />
+            <p className="flex flex-wrap items-center gap-2">
+              I love building things and helping people.
             </p>
-            <p className="mt-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
-              This is what I am working on currently <AppIcons />
+            <p className="mt-10 flex flex-wrap items-center gap-2">
+              Currently building <JellyKitIcon /> a starter kit for developers
             </p>
-            <p className="mt-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
-              Lastly I run a small company{" "}
-              <Link
-                href="https://pixelhive.dev"
-                className="text-blue-500 hover:underline"
-              >
-                PixelHive
-              </Link>
+            <p className="flex flex-wrap items-center gap-2">
+              <Highlighter action="underline" color="#FFCDA3">one click install</Highlighter> and you are ready to build!
             </p>
-            <p>where we create new experiences in the Minecraft universe.</p>
+            <p className="mt-10 flex flex-wrap items-center gap-2">
+              Also posting on social media <SocialIcons />
+            </p>
           </div>
         </div>
       </div>

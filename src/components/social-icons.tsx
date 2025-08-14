@@ -9,7 +9,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 export default function SocialIcons() {
   return (
-    <span className="group relative inline-flex">
+    <span className="group relative inline-flex gap-4 sm:gap-0">
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
