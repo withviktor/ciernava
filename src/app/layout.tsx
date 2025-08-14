@@ -1,8 +1,9 @@
+import config from "@/../config";
 import "highlight.js/styles/tokyo-night-dark.css";
+import { Inter } from "next/font/google";
 import "~/styles/globals.css";
-import { Inter } from 'next/font/google'
 
-import { type Metadata } from "next";
+import { type Metadata, type Viewport } from "next";
 import Providers from "~/components/ui/providers";
 
 const inter = Inter({
@@ -12,16 +13,44 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Viktor Čierňava",
-  description:
-    "Hi, I’m a software engineer and a solo-preneur based in Czech Republic.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-  openGraph: {
-    title: "Viktor Čierňava",
-    description:
-      "Hi, I’m a software engineer and a solo-preneur based in Czech Republic.",
-    url: "https://withviktor.com",
+  title: {
+    template: `%s | ${config.appName}`,
+    default: config.appName,
   },
+  icons: [
+    {
+      rel: "icon",
+      url: "/favicon.ico",
+    },
+  ],
+  description: config.appDescription,
+  metadataBase: new URL(config.siteUrl),
+  openGraph: {
+    title: config.appName,
+    description: config.appDescription,
+    url: config.siteUrl,
+    siteName: config.appName,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: config.appName,
+    description: config.appDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#FFCDA3",
 };
 
 export default function RootLayout({
