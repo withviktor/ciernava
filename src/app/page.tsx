@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import myPhoto from "~/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c-removebg-preview.png";
+import DiscordIcon from "~/components/discord-icon";
 import JellyKitIcon from "~/components/jellykit-icon";
 import { Highlighter } from "~/components/magicui/highlighter";
 import SocialIcons from "~/components/social-icons";
@@ -33,10 +34,16 @@ export default function HomePage() {
               Currently building <JellyKitIcon /> a starter kit for developers
             </p>
             <p className="flex flex-wrap items-center gap-2">
-              <Highlighter action="underline" color="#FFCDA3">one click install</Highlighter> and you are ready to build!
+              <Highlighter action="underline" color="#FFCDA3">
+                one click install
+              </Highlighter>{" "}
+              and you are ready to build!
             </p>
             <p className="mt-10 flex flex-wrap items-center gap-2">
-              Also posting on social media <SocialIcons />
+              Check me out on <SocialIcons />
+            </p>
+            <p className="flex flex-wrap items-center gap-2">
+              or join my community on <DiscordIcon />
             </p>
           </div>
         </div>
