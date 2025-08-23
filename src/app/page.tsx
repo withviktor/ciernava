@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import myPhoto from "~/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c-removebg-preview.png";
 import DiscordIcon from "~/components/discord-icon";
-import JellyKitIcon from "~/components/jellykit-icon";
-import { Highlighter } from "~/components/magicui/highlighter";
 import SocialIcons from "~/components/social-icons";
+
+import { Highlighter } from "~/components/magicui/highlighter";
 
 export default function HomePage() {
   return (
@@ -31,13 +31,16 @@ export default function HomePage() {
               I love building things and helping people.
             </p>
             <p className="mt-10 flex flex-wrap items-center gap-2">
-              Currently building <JellyKitIcon /> a starter kit for developers
+              Working on <Highlighter action="underline" strokeWidth={2} color="#FFCDA3">native applications</Highlighter> for enterprise
             </p>
             <p className="flex flex-wrap items-center gap-2">
-              <Highlighter action="underline" color="#FFCDA3">
-                one click install
-              </Highlighter>{" "}
-              and you are ready to build!
+              using .NET, TypeScript and Blazor or React.
+            </p>
+            <p className="mt-10 flex flex-wrap items-center gap-2">
+              Exploring the world of microcontrollers
+            </p>
+            <p className="flex flex-wrap items-center gap-2">
+              and crafting IoT devices with C and C++.
             </p>
             <p className="mt-10 flex flex-wrap items-center gap-2">
               Check me out on <SocialIcons />
