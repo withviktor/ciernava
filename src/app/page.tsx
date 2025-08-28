@@ -34,13 +34,13 @@ export default function HomePage() {
               Working on <Highlighter action="underline" strokeWidth={2} color="#FFCDA3">native applications</Highlighter> for enterprise
             </p>
             <p className="flex flex-wrap items-center gap-2">
-              using .NET, TypeScript and Blazor or React.
+              using TypeScript, React, Flutter and Swift.
             </p>
             <p className="mt-10 flex flex-wrap items-center gap-2">
               Exploring the world of microcontrollers
             </p>
             <p className="flex flex-wrap items-center gap-2">
-              and crafting IoT devices with C and C++.
+              and crafting IoT devices with C++ and Python.
             </p>
             <p className="mt-10 flex flex-wrap items-center gap-2">
               Check me out on <SocialIcons />
