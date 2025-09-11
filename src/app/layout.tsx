@@ -5,7 +5,6 @@ import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
 import Providers from "~/components/ui/providers";
-import { getSEOTags } from "~/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
