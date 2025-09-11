@@ -5,6 +5,7 @@ import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
 import Providers from "~/components/ui/providers";
+import { getSEOTags } from "~/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | ${config.appName}`,
+    template: `${config.appName} | %s`,
     default: config.appName,
   },
   icons: [
@@ -42,6 +43,19 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  keywords: [
+    "freelance",
+    "freelancer",
+    "withviktor",
+    "Viktor Čierňava",
+    "Viktor",
+    "Čierňava",
+    "web",
+    "designer",
+    "developer",
+    "web developer",
+    "web designer",
+  ],
   manifest: "/manifest.json",
 };
 

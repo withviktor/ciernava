@@ -2,10 +2,10 @@ import type { ConfigProps } from "./types/config";
 
 const config: ConfigProps = {
   // REQUIRED
-  appName: "Viktor Čierňava",
+  appName: "Web Designer - Viktor Čierňava",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "Viktor Čierňava's personal website and portfolio.",
+    "Viktor Čierňava - Web Designer Ostrava, tvořím úspěšné webové stránky",
   // REQUIRED (no https://, not trailing slash at the end, just the naked domain)
   domainName: "withviktor.com",
   stripe: {
