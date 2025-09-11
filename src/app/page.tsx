@@ -28,7 +28,7 @@ export const metadata = getSEOTags({
 
 export default function HomePage() {
   return (
-    <div className="mt-0 flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-8 bg-orange-50/50 dark:bg-gray-900">
+    <div className="mt-0 flex min-h-screen w-full flex-col items-center justify-center bg-orange-50/50 p-4 dark:bg-gray-900 sm:p-8">
       <div className="flex w-full max-w-[1300px] flex-row items-center justify-center gap-20">
         <BlurFade className="flex flex-col items-start gap-4">
           <SocialIcons />
