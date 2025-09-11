@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import GithubIcon from "~/../public/assets/Social Media Icons/github.svg";
+import Discord from "~/../public/assets/Social Media Icons/discord.svg";
 import InstagramIcon from "~/../public/assets/Social Media Icons/instagram.svg";
 import LinkedInIcon from "~/../public/assets/Social Media Icons/linkedin.svg";
 import TwitterIcon from "~/../public/assets/Social Media Icons/x.svg";
@@ -31,28 +31,10 @@ export default function SocialIcons() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
-            href="https://github.com/withviktor"
-            target="_blank"
-            className="relative z-10 transition-all duration-200 sm:rotate-3 sm:transform sm:group-hover:translate-x-2 sm:group-hover:rotate-0"
-            
-          >
-            <Image
-              src={GithubIcon as string}
-              alt="@withviktor"
-              width={42}
-              height={42}
-              className="block"
-            />
-          </Link>
-        </TooltipTrigger>
-        <TooltipContent>@withviktor</TooltipContent>
-      </Tooltip>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Link
             href="https://www.instagram.com/withviktor_/"
             target="_blank"
-            className="relative z-10 transition-all duration-200 sm:-translate-x-4 sm:-rotate-6 sm:transform sm:group-hover:translate-x-4 sm:group-hover:rotate-0"
+            
+            className="relative z-10 transition-all duration-200 sm:rotate-3 sm:transform sm:group-hover:translate-x-2 sm:group-hover:rotate-0"
           >
             <Image
               src={InstagramIcon as string}
@@ -70,7 +52,8 @@ export default function SocialIcons() {
           <Link
             href="https://x.com/vciernava"
             target="_blank"
-            className="relative z-10 transition-all duration-200 sm:-translate-x-6 sm:rotate-3 sm:transform sm:group-hover:translate-x-6 sm:group-hover:rotate-0"
+            className="relative z-10 transition-all duration-200 sm:-translate-x-4 sm:-rotate-6 sm:transform sm:group-hover:translate-x-4 sm:group-hover:rotate-0"
+            
           >
             <Image
               src={TwitterIcon as string}
@@ -82,6 +65,24 @@ export default function SocialIcons() {
           </Link>
         </TooltipTrigger>
         <TooltipContent>@vciernava</TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Link
+            href="https://discord.gg/xevyBvVedU"
+            target="_blank"
+            className="relative z-10 transition-all duration-200 sm:-translate-x-6 sm:rotate-3 sm:transform sm:group-hover:translate-x-6 sm:group-hover:rotate-0"
+          >
+            <Image
+              src={Discord as string}
+              alt="Discord Logo"
+              width={42}
+              height={42}
+              className="block rounded-md"
+            />
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent>Viktor’s dev club 🦄</TooltipContent>
       </Tooltip>
     </span>
   );
