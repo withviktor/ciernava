@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
+import { GridBeams } from "~/components/magicui/grid-beams";
 import Providers from "~/components/ui/providers";
 
 const inter = Inter({
@@ -72,7 +73,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <GridBeams className="mt-0 flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-8">
+            <div className="flex w-full max-w-[1300px] flex-row items-center justify-center gap-20">
+              <div className="flex flex-col items-start gap-4">{children}</div>
+            </div>
+          </GridBeams>
+        </Providers>
       </body>
     </html>
   );

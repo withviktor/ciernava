@@ -5,7 +5,7 @@ import Link from "next/link";
 import myPhoto from "~/../public/assets/2FFDA69D-7ECA-40C5-9E88-34F5C964209B_1_105_c-removebg-preview.png";
 import { BlurFade } from "~/components/magicui/blur-fade";
 import SocialIcons from "~/components/social-icons";
-import { CustomButton } from "~/components/ui/custom-button";
+import { Button } from "~/components/ui/button";
 import { getSEOTags } from "~/lib/seo";
 
 export const metadata = getSEOTags({
@@ -28,35 +28,38 @@ export const metadata = getSEOTags({
 
 export default function HomePage() {
   return (
-    <div className="mt-0 flex min-h-screen w-full flex-col items-center justify-center bg-orange-50/50 p-4 dark:bg-gray-900 sm:p-8">
-      <div className="flex w-full max-w-[1300px] flex-row items-center justify-center gap-20">
-        <BlurFade className="flex flex-col items-start gap-4">
-          <SocialIcons />
-          <p className="mb-10 items-center gap-2 text-4xl font-bold sm:text-7xl">
-            UI/UX Designer <br /> & Developer{" "}
-            <span>
-              <Image
-                src={myPhoto}
-                height={64}
-                width={64}
-                alt="This is Viktor"
-                className="inline-flex h-12 w-12 rounded-full sm:h-16 sm:w-16"
-              />
-            </span>
-          </p>
+    <>
+      <BlurFade>
+        <SocialIcons />
+      </BlurFade>
+      <BlurFade
+        delay={0.1}
+        className="mb-10 items-center gap-2 text-4xl font-bold sm:text-7xl"
+      >
+        UI/UX Designer <br /> & Developer{" "}
+        <span>
+          <Image
+            src={myPhoto}
+            height={64}
+            width={64}
+            alt="This is Viktor"
+            className="inline-flex h-12 w-12 rounded-full sm:h-16 sm:w-16"
+          />
+        </span>
+      </BlurFade>
 
-          <p className="mb-10 text-2xl font-light">
-            Zaobírám se tvorbou webových stránek a růstem Vaší značky.
-          </p>
+      <BlurFade delay={0.2} className="mb-10 text-2xl font-light">
+        Zaobírám se tvorbou webových stránek a růstem Vaší značky.
+      </BlurFade>
 
-          <CustomButton asChild>
-            <Link href="mailto:business@withviktor.com">
-              Žádost o spolupráci
-              <ArrowRight className="ml-2" />
-            </Link>
-          </CustomButton>
-        </BlurFade>
-      </div>
-    </div>
+      <BlurFade delay={0.3}>
+        <Button variant="brand" asChild>
+          <Link href="mailto:business@withviktor.com">
+            Žádost o spolupráci
+            <ArrowRight className="ml-2" />
+          </Link>
+        </Button>
+      </BlurFade>
+    </>
   );
 }

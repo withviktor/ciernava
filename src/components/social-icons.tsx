@@ -9,13 +9,13 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 export default function SocialIcons() {
   return (
-    <span className="group relative inline-flex gap-4 sm:gap-0">
+    <span className="group relative inline-flex gap-4 lg:gap-0">
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
             href="https://linkedin.com/in/withviktor"
             target="_blank"
-            className="relative z-10 transition-all duration-200 sm:translate-x-2 sm:-rotate-6 sm:transform sm:group-hover:translate-x-0 sm:group-hover:rotate-0"
+            className="relative z-10 transition-all duration-200 lg:translate-x-2 lg:-rotate-6 lg:transform lg:group-hover:translate-x-0 lg:group-hover:rotate-0"
           >
             <Image
               src={LinkedInIcon as string}
@@ -34,7 +34,7 @@ export default function SocialIcons() {
             href="https://www.instagram.com/withviktor_/"
             target="_blank"
             
-            className="relative z-10 transition-all duration-200 sm:rotate-3 sm:transform sm:group-hover:translate-x-2 sm:group-hover:rotate-0"
+            className="relative z-10 transition-all duration-200 lg:rotate-3 lg:transform lg:group-hover:translate-x-2 lg:group-hover:rotate-0"
           >
             <Image
               src={InstagramIcon as string}
@@ -52,7 +52,7 @@ export default function SocialIcons() {
           <Link
             href="https://x.com/vciernava"
             target="_blank"
-            className="relative z-10 transition-all duration-200 sm:-translate-x-4 sm:-rotate-6 sm:transform sm:group-hover:translate-x-4 sm:group-hover:rotate-0"
+            className="relative z-10 transition-all duration-200 lg:-translate-x-4 lg:-rotate-6 lg:transform lg:group-hover:translate-x-4 lg:group-hover:rotate-0"
             
           >
             <Image
@@ -71,7 +71,7 @@ export default function SocialIcons() {
           <Link
             href="https://discord.gg/xevyBvVedU"
             target="_blank"
-            className="relative z-10 transition-all duration-200 sm:-translate-x-6 sm:rotate-3 sm:transform sm:group-hover:translate-x-6 sm:group-hover:rotate-0"
+            className="relative z-10 transition-all duration-200 lg:-translate-x-6 lg:rotate-3 lg:transform lg:group-hover:translate-x-6 lg:group-hover:rotate-0"
           >
             <Image
               src={Discord as string}
@@ -82,7 +82,7 @@ export default function SocialIcons() {
             />
           </Link>
         </TooltipTrigger>
-        <TooltipContent>Viktor’s dev club 🦄</TooltipContent>
+        <TooltipContent>Viktor&apos;s dev club 🦄</TooltipContent>
       </Tooltip>
     </span>
   );
