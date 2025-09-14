@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import React, { HTMLAttributes, useMemo } from "react";
+import React, { type HTMLAttributes, useMemo } from "react";
 import { cn } from "~/lib/utils";
 
 const createGridMask = (start: number, end: number): string => {
@@ -73,7 +73,7 @@ const LightRay = React.memo<LightRayProps>(
   }) => {
     return (
       <motion.div
-        className="absolute pointer-events-none -top-[5%] left-[var(--ray-left)] w-[var(--ray-width)] h-[var(--ray-height)] origin-top mix-blend-screen bg-[linear-gradient(to_bottom,rgba(200,220,255,var(--ray-opacity)),rgba(200,220,255,0))] blur-[var(--ray-blur)] translate-x-[-50%] rotate-[var(--ray-rotation)]"
+        className="pointer-events-none absolute -top-[5%] left-[var(--ray-left)] h-[var(--ray-height)] w-[var(--ray-width)] origin-top translate-x-[-50%] rotate-[var(--ray-rotation)] bg-[linear-gradient(to_bottom,rgba(200,220,255,var(--ray-opacity)),rgba(200,220,255,0))] mix-blend-screen blur-[var(--ray-blur)]"
         style={
           {
             "--ray-left": left,
@@ -110,6 +110,8 @@ const LightRay = React.memo<LightRayProps>(
     );
   },
 );
+
+LightRay.displayName = "LightRay";
 
 export const GridBeams: React.FC<GridBeamsProps> = ({
   children,
@@ -150,7 +152,7 @@ export const GridBeams: React.FC<GridBeamsProps> = ({
       {...props}
     >
       <div
-        className="absolute inset-0 pointer-events-none bg-[linear-gradient(var(--grid-color)_1px,transparent_1px),linear-gradient(90deg,var(--grid-color)_1px,transparent_1px)] bg-size-[var(--grid-size)_var(--grid-size)] [mask-image:var(--grid-mask)] [webkit-mask-image:var(--grid-mask)]"
+        className="bg-size-[var(--grid-size)_var(--grid-size)] pointer-events-none absolute inset-0 bg-[linear-gradient(var(--grid-color)_1px,transparent_1px),linear-gradient(90deg,var(--grid-color)_1px,transparent_1px)] [mask-image:var(--grid-mask)] [webkit-mask-image:var(--grid-mask)]"
         style={
           {
             "--grid-color": gridColor,
@@ -159,7 +161,7 @@ export const GridBeams: React.FC<GridBeamsProps> = ({
           } as React.CSSProperties
         }
       />
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {rayConfigs.map((config, index) => (
           <LightRay
             key={index}

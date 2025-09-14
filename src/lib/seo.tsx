@@ -96,8 +96,7 @@ export const renderSchemaTags = () => {
             ratingValue: "4.8",
             ratingCount: "12",
           },
-          offers: [
-          ],
+          offers: [],
         }),
       }}
     ></script>

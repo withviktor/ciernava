@@ -33,7 +33,6 @@ export default function SocialIcons() {
           <Link
             href="https://www.instagram.com/withviktor_/"
             target="_blank"
-            
             className="relative z-10 transition-all duration-200 lg:rotate-3 lg:transform lg:group-hover:translate-x-2 lg:group-hover:rotate-0"
           >
             <Image
@@ -53,7 +52,6 @@ export default function SocialIcons() {
             href="https://x.com/vciernava"
             target="_blank"
             className="relative z-10 transition-all duration-200 lg:-translate-x-4 lg:-rotate-6 lg:transform lg:group-hover:translate-x-4 lg:group-hover:rotate-0"
-            
           >
             <Image
               src={TwitterIcon as string}
