@@ -5,7 +5,7 @@ export default function Providers({ children }: PropsWithChildren) {
   return (
     <ThemeProvider
       attribute="class"
-      forcedTheme="dark"
+      forcedTheme="light"
       disableTransitionOnChange
     >
       {children}

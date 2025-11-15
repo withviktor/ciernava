@@ -59,8 +59,9 @@ export default {
           foreground: "hsl(var(--destructive-foreground))",
         },
         brand: {
-          DEFAULT: "#FFCDA3",
-          foreground: "#000000",
+          DEFAULT: "#1b6df9",
+          foreground: "#ffffff",
+          hover: "#1a67ed",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -28,7 +28,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -54,11 +54,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
-  }
-  .theme {
-    --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
-    --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear
+    --chart-5: 340 75% 55%;
   }
 }
 
@@ -70,26 +66,70 @@
     @apply bg-background text-foreground;
     @apply font-normal antialiased;
   }
-}
 
-@theme inline {
-  @keyframes shimmer-slide {
-  to {
-    transform: translate(calc(100cqw - 100%), 0);
+  .w-hero {
+    @apply flex;
+    flex-flow: column;
+    @apply items-center justify-center;
+    @apply h-screen;
+    @apply w-screen;
+  }
+  .w-section {
+    @apply block;
+
+    .w-section-subtitle {
+     @apply text-sm font-semibold uppercase text-muted-foreground;
+    }
+
+    .w-section-title {
+      @apply mb-5 text-5xl font-semibold;
     }
   }
-  @keyframes spin-around {
-  0% {
-    transform: translateZ(0) rotate(0);
+  .w-container {
+    @apply flex;
+    flex-flow: column;
+    @apply max-w-[960px];
+    @apply px-10;
+    @apply w-full;
+    @apply mx-auto;
+  }
+  .w-footer {
+    @apply flex;
+    flex-flow: column;
+    @apply items-center justify-center;
+    @apply h-screen;
+    @apply w-screen;
+  }
+
+  .w-techstack {
+    @apply grid auto-cols-fr grid-cols-2 grid-rows-[auto] gap-x-6 gap-y-10;
+
+    .w-stack-info {
+      @apply flex flex-col gap-y-6;
     }
-  15%, 35% {
-    transform: translateZ(0) rotate(90deg);
+
+    .w-stack-info-title {
+      @apply text-sm font-semibold text-muted-foreground;
     }
-  65%, 85% {
-    transform: translateZ(0) rotate(270deg);
-    }
-  100% {
-    transform: translateZ(0) rotate(360deg);
+
+    .w-stack-blocks {
+      @apply flex flex-col;
+
+      .w-stack-block {
+        @apply flex items-start justify-start gap-x-4 border-t border-t-muted py-5;
+      }
+
+      .w-stack-block-content {
+        @apply flex flex-col;
+      }
+
+      .w-stack-block-title {
+        @apply text-sm font-medium;
+      }
+
+      .w-stack-block-description {
+        @apply text-sm font-medium text-muted-foreground;
+      }
     }
   }
 }
